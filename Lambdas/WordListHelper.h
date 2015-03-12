@@ -13,6 +13,9 @@ public:
 	std::vector<int> counts_fn(const std::vector<std::string> words);
 	std::vector<int> vowels_fn(const std::vector<std::string> words);
 	std::vector<int> consonants_fn(const std::vector<std::string> words);
+
+	std::vector<int> vowels_fn2(const std::vector<std::string> words);
+
 private:
 	std::vector<int> map_word(const std::vector<std::string> words, std::function<int(std::string)> functor);
 	std::vector<int> map_char(const std::vector<std::string> words, std::function<bool(char)> predicate);

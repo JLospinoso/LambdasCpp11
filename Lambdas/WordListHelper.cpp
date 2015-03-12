@@ -1,4 +1,5 @@
 #include "WordListHelper.h"
+#include "algorithm"
 
 WordListHelper::WordListHelper() {
 	this->is_vowel = [](char c) { return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';  };
@@ -38,6 +39,17 @@ std::vector<int> WordListHelper::vowels_fn(const std::vector<std::string> words)
 {
 	return this->map_char(words, this->is_vowel);
 }
+
+
+std::vector<int> WordListHelper::vowels_fn2(const std::vector<std::string> words)
+{
+	std::vector<int> result{};
+	result.resize(words.size());
+	auto vowel_counter = [&](std::string word) { return (int)std::count_if(word.cbegin(), word.cend(), this->is_vowel); };
+	std::transform(words.begin(), words.end(), result.begin(), vowel_counter);
+	return result;
+}
+
 
 std::vector<int> WordListHelper::consonants(const std::vector<std::string> words)
 {

@@ -54,6 +54,17 @@ namespace LambdasTest
 			Assert::AreEqual(5, lengths.at(2));
 		}
 
+		TEST_METHOD(VowelsFn2)
+		{
+			WordListHelper helper{};
+			std::vector < std::string > input{ "aether", "io", "queueing" };
+			auto lengths = helper.vowels_fn2(input);
+
+			Assert::AreEqual(3, lengths.at(0));
+			Assert::AreEqual(2, lengths.at(1));
+			Assert::AreEqual(5, lengths.at(2));
+		}
+
 
 		TEST_METHOD(Consonants)
 		{
